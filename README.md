@@ -78,10 +78,31 @@ The root module is the entry point where we link together all the modules. It al
  
 #### **b. variables.tf**
 
-   - **Path**: `main/variable.tf`
+   - **Path**: `main/variables.tf`
    - **Purpose**: Defines all the input variables for the entire Terraform configuration. These variables allow customization of resource attributes.
    - **Key Features**:
      - Example variables include VPC CIDR, instance type, subnet CIDR, and AMI ID.
 
+#### **c. outputs.tf**
+
+   - **Path**: `main/outputs.tf`
+   - **Purpose**: Declares the outputs from the root module. These outputs are typically the results of the created resources like VPC ID, subnet ID, and EC2 instance ID.
+   - **Key Features**:
+     - Displays important information after applying the Terraform configuration.
+
+#### **d. provider.tf**
+
+   - **Path**: `main/provider.tf`
+   - **Purpose**: Configures the AWS provider that Terraform will use to create resources in your AWS account.
+   - **Key Features**:
+     - Specifies the region for resources.
+     - Sets up the AWS credentials.
+    
+#### **e. terraform.tfvars**
+
+   - **Path**: `main/terraform.tfvars`
+   - **Purpose**: Contains the actual values for the variables defined in variables.tf. This file is where you input values for the CIDR blocks, instance types, etc., specific to your environment.
+   - **Key Features**:
+     - Allows for easy configuration and updating of resource settings.
 
 
