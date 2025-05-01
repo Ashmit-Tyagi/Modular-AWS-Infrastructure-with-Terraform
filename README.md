@@ -101,7 +101,7 @@ The root module is the entry point where we link together all the modules. It al
 #### **e. terraform.tfvars**
 
    - **Path**: `main/terraform.tfvars`
-   - **Purpose**: Contains the actual values for the variables defined in variables.tf. This file is where you input values for the CIDR blocks, instance types, etc., specific to your environment.
+   - **Purpose**: Contains the actual values for the variables defined in variables.tf. This file is where you input values for the CIDR blocks, instance types, etc.
    - **Key Features**:
      - Allows for easy configuration and updating of resource settings.
 
