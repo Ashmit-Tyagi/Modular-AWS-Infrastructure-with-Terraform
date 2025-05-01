@@ -76,12 +76,10 @@ The root module is the entry point where we link together all the modules. It al
   - Includes `module` blocks to call each of the modules (VPC, Subnet, EC2).
   - Passes the required variables from `terraform.tfvars` to the modules.
  
-  ### **b. variables.tf
+#### **b. variables.tf**
 
    - **Path**: 'main/variables.tf'
-
    - **Purpose**: Defines all the input variables for the entire Terraform configuration. These variables allow customization of resource attributes.
-
    - **Key Features**:
      - Example variables include VPC CIDR, instance type, subnet CIDR, and AMI ID.
 
