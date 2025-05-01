@@ -27,7 +27,6 @@ This directory contains the individual modules responsible for creating resource
 - **Purpose**: This module is responsible for creating a **Virtual Private Cloud (VPC)** in AWS.
 - **Key Features**:
   - Defines the CIDR block for the VPC.
-  - Creates a route table for routing.
   - Configures the VPC with the required network setup.
   
 Files:
@@ -70,6 +69,23 @@ Files:
 ### **2. Root Module**
 
 The root module is the entry point where we link together all the modules. It also holds configuration for the provider and handles the application of the modules.
+
+#### **a. main.tf**
+
+- **Path**: `main/main.tf`
+- **Purpose**: This file is the entry point for Terraform configurations. It calls and links the modules (`vpc`, `subnet`, and `ec2`) to deploy the entire infrastructure.
+- **Key Features**:
+  - Includes `module` blocks to call each of the modules (VPC, Subnet, EC2).
+  - Passes the required variables from `terraform.tfvars` to the modules.
+ 
+  ### **b. variables.tf
+
+   - **Path**: 'main/variables.tf'
+
+   - **Purpose**: Defines all the input variables for the entire Terraform configuration. These variables allow customization of resource attributes.
+
+   - **Key Features**:
+     - Example variables include VPC CIDR, instance type, subnet CIDR, and AMI ID.
 
 
 
