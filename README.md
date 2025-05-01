@@ -21,3 +21,55 @@ The project is organized into modules, which are reusable and configurable. Belo
 This directory contains the individual modules responsible for creating resources. Each module is designed for a specific task, allowing you to reuse them for different environments.
 
 
+#### **a. VPC Module**
+
+- **Path**: `modules/vpc/`
+- **Purpose**: This module is responsible for creating a **Virtual Private Cloud (VPC)** in AWS.
+- **Key Features**:
+  - Defines the CIDR block for the VPC.
+  - Creates a route table for routing.
+  - Configures the VPC with the required network setup.
+  
+Files:
+- `main.tf`: Contains the resource definitions for the VPC.
+- `variables.tf`: Defines the input variables, like CIDR block.
+- `outputs.tf`: Declares the output values, like the VPC ID.
+
+---
+
+#### **b. Subnet Module**
+
+- **Path**: `modules/subnet/`
+- **Purpose**: This module is responsible for creating a **Subnet** inside the VPC. It will associate the subnet with the VPC ID provided from the root module.
+- **Key Features**:
+  - Creates public or private subnets.
+  - Associates the subnet with the specified VPC.
+  
+Files:
+- `main.tf`: Contains the resource definitions for creating subnets.
+- `variables.tf`: Defines the subnet CIDR block and VPC ID.
+- `outputs.tf`: Outputs the Subnet ID.
+
+---
+
+#### **c. EC2 Module**
+
+- **Path**: `modules/ec2/`
+- **Purpose**: This module is responsible for launching an **EC2 instance** within the provided subnet.
+- **Key Features**:
+  - Allows you to specify the instance type, AMI ID, and other configurations.
+  - Associates the instance with a security group.
+  
+Files:
+- `main.tf`: Defines the EC2 instance resource.
+- `variables.tf`: Input variables like AMI ID, instance type, etc.
+- `outputs.tf`: Outputs the instance ID and public IP.
+
+---
+
+### **2. Root Module**
+
+The root module is the entry point where we link together all the modules. It also holds configuration for the provider and handles the application of the modules.
+
+
+
