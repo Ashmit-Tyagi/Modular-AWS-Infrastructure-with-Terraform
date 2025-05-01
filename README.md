@@ -2,8 +2,6 @@
 
  A modular Terraform project to provision AWS resources such as VPC, Subnet, and EC2 instances. By organizing the infrastructure into reusable modules!
 
-# Project Folder Structure:
-
 # Terraform Infrastructure Setup: VPC, Subnet, and EC2
 
 This repository contains Terraform code to deploy AWS infrastructure resources, including **VPC**, **Subnet**, and **EC2** instances. The resources are organized into **modules** for easy management and reusability.
